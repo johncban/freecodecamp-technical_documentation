@@ -1,0 +1,271 @@
+html,
+body {
+  min-width: 290px;
+  color: #262512;
+  background-color: #ffffff;
+  font-family: 'Open Sans', Arial, sans-serif;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+#navbar {
+  background-color: white;
+  position: fixed;
+  min-width: 290px;
+  top: 0px;
+  left: 0px;
+  width: 300px;
+  height: 100%;
+}
+
+header {
+  color: black;
+  margin: 10px;
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: thin;
+}
+
+#main-doc header {
+  text-align: left;
+  margin: 0px;
+}
+
+#navbar ul {
+  height: 88%;
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#navbar li {
+  color: #262512;
+  border-top: 1px solid;
+  list-style: none;
+  position: relative;
+  width: 100%;
+}
+
+
+#navbar a {
+  display: block;
+  padding: 10px 30px;
+  color: #8a752b;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all .35s ease-Out;
+}
+
+#navbar a:hover {
+  border-left: 20px solid #e9c950;
+  transition: all .35s ease-Out;
+  background-color: #ffdd47;
+  color: #262512;
+}
+
+#main-doc {
+  position: absolute;
+  margin-left: 310px;
+  padding: 20px;
+  margin-bottom: 110px;
+}
+
+section article {
+  color: #4d4e53;
+  margin: 15px;
+  font-size: 0.96em;
+}
+
+section li {
+  margin: 15px 0px 0px 20px;
+}
+
+code {
+  width: auto;
+  display: block;
+  text-align: left;
+  white-space: pre-line;
+  position: relative;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 2;
+  background-color: #fae89992;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 0px;
+  border-bottom: 1px solid #eff19c;
+  border-top: 1px solid #e5e781;
+}
+
+
+
+/**
+* Border CSS
+*/
+.box:before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(-32deg, #e9c950 -32%, #ffdd47 140% );
+  transform: translate3d(0px, 20px, 0) scale(1);
+  filter: blur(60px);
+  opacity: var(0.7);
+  transition: opacity 0.3s;
+  border-radius: inherit;
+}
+/* 
+* Prevents issues when the parent creates a 
+* stacking context. (For example, using the transform
+* property )
+*/
+.box::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  border-radius: inherit;
+}
+/***/
+
+
+
+
+/**
+* Bring to Top Page
+*/ 
+.top {
+  --offset: 50px; 
+  
+  position: sticky;
+  bottom: 20px;      
+  margin-right:10px; 
+  place-self: end;
+  margin-top: calc(100vh + var(--offset));
+  
+  /* visual styling */
+  text-decoration: none;
+  padding: 10px;
+  font-family: sans-serif;
+  color: #fff;
+  background: #000;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+/***/
+
+
+
+/**
+* Logo
+*/
+.js-logo {
+  max-width: 50%;
+  height: auto;
+}
+/***/
+
+
+/**
+* Float Button
+*/
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#e9c950;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+.float:hover{
+  transition: all .35s ease-Out;
+	background-color:#ffdd47;
+	color:#000;
+  box-shadow: 2px 2px 3px #999;
+}
+.f-button{
+  padding: 16px;
+  margin-top: calc(100vh + var(--offset));;
+}
+/***/
+
+
+@media only screen and (max-width: 815px) {
+  /* For mobile phones: */
+  #navbar ul {
+    /* border: 0.5px solid; */
+    height: 207px;
+  }
+
+  #navbar {
+    background-color: white;
+    position: absolute;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-height: 380px;
+    border: none;
+    z-index: 1;
+  }
+
+  #main-doc {
+    position: relative;
+    margin-left: 0px;
+    margin-top: 450px;
+  }
+
+  .js-logo {
+    max-width: 10%;
+    height: auto;
+  }
+}
+
+
+
+@media only screen and (max-height: 320px) {
+  /* For mobile phones: */
+  #navbar ul {
+    height: 170px;
+  }
+  #navbar {
+    max-height: 350px;
+  }
+  #main-doc {
+    margin-top: 320px;
+  }
+  code {
+    font-size: 10px;
+    border-radius: 5px;
+  }
+}
+
+
+
+@media only screen and (max-width: 400px) {
+  #main-doc {
+    margin-left: -10px;
+  }
+
+  code {
+    margin-left: -20px;
+    width: 100%;
+    padding: 15px;
+    padding-left: 10px;
+    padding-right: 45px;
+    min-width: 233px;
+    border-radius: 5px;
+    font-size: 10px;
+  }
+}
